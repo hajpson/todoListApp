@@ -1,0 +1,121 @@
+:root {
+  margin: 0 auto;
+}
+
+.header {
+  margin: 0;
+}
+
+.mainButton {
+  border-radius: 6px;
+  padding: 6px 12px;
+  color: #003261;
+  background-color: rgb(225, 225, 225);
+  font-family: inherit;
+  border: none;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.mainButton:hover {
+  background-color: rgba(255, 255, 255);
+}
+
+.mainButton:active {
+  background-color: rgb(225, 225, 225);
+}
+
+.newTodoPageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  background-color: rgba(255, 255, 255, 0.425);
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.form button {
+  margin-top: 12px;
+  align-self: start;
+}
+
+.formInput {
+  border: none;
+  border-radius: 6px;
+  padding: 6px;
+  color: #003261;
+  font-family: inherit;
+}
+
+.todosContainer {
+  display: flex;
+}
+
+.todoItemContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.425);
+}
+
+.todoItemContainer p {
+  margin: 0;
+}
+
+.markIcon {
+  color: rgba(59, 250, 52, 0.5);
+  transition: .4s;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.markIcon:hover {
+  color: rgba(59, 250, 52);
+}
+
+.editIcon {
+  color: rgba(226, 226, 226, 0.685);
+  transition: .4s;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.editIcon:hover {
+  color: rgb(255, 255, 255);
+}
+
+.deleteIcon {
+  color: rgba(224, 0, 0, 0.5);
+  transition: .4s;
+  cursor: pointer;
+}
+
+.deleteIcon:hover {
+  color: rgba(255, 57, 57, 0.815);
+}
+
+.iconsContainer {
+  display: flex;
+  margin-left: 20px;
+}
+
+.disabledIconsContainer {
+  display: flex;
+  margin-left: 20px;
+  align-items: center;
+}
+
+.doneText {
+  color: rgba(59, 250, 52);
+  padding-right: 12px;
+}
