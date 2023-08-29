@@ -2,15 +2,15 @@ import { TodoModel } from "../models/TodoModel"
 import { MdDelete, MdEdit, MdCheck } from 'react-icons/md'
 import { IconContext } from "react-icons";
 
-interface ITodoItemCardProps {
+type TodoItemCardProps = {
     todoItem: TodoModel,
     deleteCallback: ((todoItem: TodoModel) => void),
     editCallback: ((todoItem: TodoModel) => void),
     markCallback: ((todoItem: TodoModel) => void),
 }
 
-const TodoItemCard: React.FC<ITodoItemCardProps> = (
-    props: ITodoItemCardProps
+const TodoItemCard = (
+    props: TodoItemCardProps
 ) => {
     const { todoItem, deleteCallback, editCallback, markCallback } = props
     return (
