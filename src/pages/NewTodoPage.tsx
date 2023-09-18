@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react"
 import { Link, useLocation, useNavigate } from "react-router-dom"
-import { TodoModel } from "../models/TodoModel"
-import { v4 as uuidv4 } from 'uuid';
 import { ToastContainer, toast } from "react-toastify";
 import { useData } from "../TodosDataProvider";
+import { v4 as uuidv4 } from 'uuid';
 
 const NewTodoPage = () => {
     const isInEditMode = useRef(false)
@@ -40,16 +39,32 @@ const NewTodoPage = () => {
         }
 
         if (isInEditMode.current === true) {
-            const editedTodo = new TodoModel(state.id, todoContent)
-            const wantedIndex = data.findIndex(todoItem => todoItem.id === editedTodo.id)
-            data[wantedIndex].content = editedTodo.content
-            navigate("/")
+            setData((prev) => {
+                const prevItemIndex = prev?.findIndex(todoItem => todoItem.id === state.id)
 
-            return
+                if (prev === null
+                    || prevItemIndex === undefined) {
+                    return prev
+                }
+
+                prev[prevItemIndex].content = todoContent;
+                return prev
+            })
+        } else {
+            const newTodo = {
+                id: uuidv4(),
+                content: todoContent,
+                hasCompleted: false
+            }
+            if (data === null) {
+                setData([newTodo])
+                navigate("/")
+                return
+            }
+            const newTodos = [...data, newTodo]
+            setData(newTodos)
         }
 
-        const newTodo = new TodoModel(uuidv4(), todoContent)
-        setData([...data, newTodo])
         navigate("/")
     }
 

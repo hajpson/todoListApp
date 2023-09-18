@@ -1,14 +1,12 @@
 import { FC, createContext, useContext, useState } from "react";
-import { TodoModel } from "./models/TodoModel";
 import { TodosDataProviderProps } from './types/todosDataProviderProps'
 import { TodosDataProviderContext } from "./types/todosDataProviderContext";
+import { Todo } from "./types/todo";
 
 export const DataContext = createContext<TodosDataProviderContext | null>(null);
 
 export const TodosDataProvider: FC<TodosDataProviderProps> = ({ children }) => {
-    const [data, setData] = useState<TodoModel[]>([
-        new TodoModel("", "")
-    ]);
+    const [data, setData] = useState<Todo[] | null>(null);
 
     return (
         <DataContext.Provider value={{ data, setData }}>

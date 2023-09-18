@@ -1,6 +1,6 @@
-import { TodoModel } from "../models/TodoModel"
+import { Todo } from "./todo"
 
 export type TodosDataProviderContext = {
-    data: TodoModel[],
-    setData: React.Dispatch<React.SetStateAction<TodoModel[]>>
+    data: Todo[] | null,
+    setData: React.Dispatch<React.SetStateAction<Todo[] | null>>
 }
